@@ -75,5 +75,27 @@ kubectl get nodes -o wide
 
 # Our kubectl context should be automatically changed to new cluster
 kubectl config view --minify
-
 ```
+
+## Step 06: Delete Node Group
+
+```bash
+# List EKS Clusters
+eksctl get clusters
+
+# Capture Node Group name
+eksctl get nodegroup --cluster=<clusterName>
+eksctl get nodegroup --cluster=eksdemo1
+
+# Delete Node Group
+eksctl delete nodegroup --cluster=<clusterName> --name=<nodegroupName>
+eksctl delete nodegroup --cluster=amc --name=amc-ng-public
+```
+
+## Step 07: Delete Cluster
+```bash
+# Delete Cluster
+eksctl delete cluster <clusterName>
+eksctl delete cluster amcdemo
+```
+
