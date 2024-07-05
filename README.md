@@ -29,7 +29,7 @@ eksctl utils associate-iam-oidc-provider \
 # Replace with region & cluster name
 eksctl utils associate-iam-oidc-provider \
     --region us-east-1 \
-    --cluster eksdemo1 \
+    --cluster amcdemo \
     --approve
 ```
 
@@ -85,11 +85,11 @@ eksctl get clusters
 
 # Capture Node Group name
 eksctl get nodegroup --cluster=<clusterName>
-eksctl get nodegroup --cluster=eksdemo1
+eksctl get nodegroup --cluster=amcdemo
 
 # Delete Node Group
 eksctl delete nodegroup --cluster=<clusterName> --name=<nodegroupName>
-eksctl delete nodegroup --cluster=amc --name=amc-ng-public
+eksctl delete nodegroup --cluster=amcdemo --name=amcdemo-ng-public
 ```
 
 ## Step 07: Delete Cluster
